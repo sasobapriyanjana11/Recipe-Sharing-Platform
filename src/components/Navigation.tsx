@@ -13,7 +13,7 @@ const Navigation=()=>{
                         />
 
                         <ul className="flex text-black">
-                            <Link className="class-link" to='/'>RecipeSite~</Link>
+                            <Link className="class-link text-orange-800" to='/'>RecipeSite~</Link>
                         </ul>
 
                     </div>

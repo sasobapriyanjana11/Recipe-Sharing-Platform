@@ -7,4 +7,3 @@ export const fetchRecipes = async () => {
         { id: 2, title: 'Molten Lava Cake', cookingTime: 45, image: moltenCakeImg, ingredients: ['Ingredient 2'], instructions: 'Step 2' },
     ];
 };
-
