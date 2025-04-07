@@ -1,9 +1,25 @@
 @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap');
+@import "tailwindcss";
 
-@tailwind base;
-@tailwind components;
-@tailwind utilities;
+#root {
+    max-width: 1280px;
+    margin: 0 auto;
+    padding: 2rem;
+    text-align: center;
+}
 
 body {
-    @apply font-poppins;
+    font-family: "Poppins", serif;
+}
+.class-link{
+    display: inline-block;
+    @apply hover:text-black rounded-md  px-3 py-2 font-medium leading-tight;
+}
+
+input{
+    @apply appearance-none  border border-gray-300 rounded-lg rounded-md ml-3 ;
+}
+
+button{
+    @apply appearance-none  border border-gray-300 rounded-md ml-3 mt-6 py-3 text-base font-medium leading-tight text-center ;
 }
