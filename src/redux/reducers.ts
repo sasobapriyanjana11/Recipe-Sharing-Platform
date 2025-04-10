@@ -40,6 +40,14 @@ const rootReducer = (state = initialState, action: any) => {
             localStorage.setItem('favorites', JSON.stringify(updatedFavorites));
             return { ...state, favorites: updatedFavorites };
 
+        case 'REMOVE_FAVORITE':
+            const updatedFavorites1 = state.favorites.filter(recipe => recipe.id !== action.payload);
+            localStorage.setItem('favorites', JSON.stringify(updatedFavorites1)); // Save to local storage
+            return {
+                ...state,
+                favorites: updatedFavorites1,
+            };
+
         case 'VIEW_RECIPE':
             return { ...state, currentRecipe: action.payload };
 
