@@ -3,13 +3,14 @@ import { useDispatch, useSelector } from 'react-redux';
 import { addRecipe, updateRecipe } from '../redux/actions';
 import { useNavigate, useParams } from 'react-router-dom';
 
+//--------recipe form to update or add recipe---------
 const RecipeForm = () => {
     const dispatch = useDispatch();
     const navigate = useNavigate();
     const { id } = useParams();
     const recipes = useSelector((state: any) => state.recipes);
 
-    const existingRecipe = id ? recipes.find((r: any) => r.id === Number(id)) : null;
+    const existingRecipe = id ? recipes.find((r: any) => r.id === id) : null;
 
     const [form, setForm] = useState({
         id: id || Date.now().toString(),
@@ -20,12 +21,13 @@ const RecipeForm = () => {
         instructions: '',
     });
 
-    const [imagePreview, setImagePreview] = useState<string | null>(null); // To show image preview
+    // To show image preview
+    const [imagePreview, setImagePreview] = useState<string | null>(null);
 
     useEffect(() => {
         if (existingRecipe) {
             setForm(existingRecipe);
-            setImagePreview(existingRecipe.image); // Set image preview if editing
+            setImagePreview(existingRecipe.image);
         }
     }, [existingRecipe]);
 

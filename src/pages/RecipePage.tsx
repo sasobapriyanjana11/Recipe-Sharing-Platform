@@ -1,7 +1,7 @@
 import { useParams } from 'react-router-dom';
 import React, { useState, useEffect } from 'react';
 import { fetchRecipes } from '../services/api';
-
+//-------------view recipe-------------
 const RecipePage = () => {
     const { id } = useParams();
     console.log("Recipe ID from URL:", id); // Log the id
