@@ -3,9 +3,16 @@ import React, { useState } from 'react';
 const SignupPage = () => {
     const [username, setUsername] = useState('');
     const [password, setPassword] = useState('');
+    const [errorMessage, setErrorMessage] = useState('');
 
     const handleSignup = () => {
-        localStorage.setItem('user', JSON.stringify({ username }));
+        if(!username || !password) {
+            setErrorMessage('please provide both username password');
+            return;
+        }
+        const newUser={username, password};
+
+        localStorage.setItem('user', JSON.stringify(newUser));
         window.location.href = '/login';
     };
 

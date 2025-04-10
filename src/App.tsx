@@ -15,10 +15,10 @@ function App() {
             element:<RootLayout/>,
             children:[
                 { path: "/", element: <HomePage/> },
-                {path:"/favourites",element:<FavoritePage/>},
-                { path: '/recipe/:id', element: <RecipePage /> },
                 {path:"/login",element:<LoginPage/>},
                 {path:"/signup",element:<SignupPage/>},
+                {path:"/favourites",element:<FavoritePage/>},
+                { path: '/recipe/:id', element: <RecipePage /> },
                 { path: "/add-recipe", element: <RecipeForm /> },
                 { path: "/edit-recipe/:id", element: <RecipeForm /> },
             ],
