@@ -50,32 +50,4 @@ const RecipeCard = ({ recipe }) => {
         </div>
     );
 };
-
-const FavoriteList = () => {
-    const favorites = useSelector((state: any) => state.favorites);
-
-
-    return (
-        <div className="max-w-7xl mx-auto p-4 min-h-screen bg-gradient-to-br from-orange-50 to-yellow-100">
-            {favorites.length === 0 ? (
-                <div className="text-center text-xl text-gray-500">
-                    No favorite recipes added yet.
-                </div>
-            ) : (
-                <div>
-                    <h1 className="text-3xl font-bold text-center mb-6 text-gray-800">
-                        My Favorite Recipes
-                    </h1>
-                    {/* Grid display for recipes */}
-                    <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
-                        {favorites.map((recipe) => (
-                            <RecipeCard key={recipe.id} recipe={recipe} />
-                        ))}
-                    </div>
-                </div>
-            )}
-        </div>
-    );
-};
-
-export default FavoriteList;
+export default RecipeCard;
