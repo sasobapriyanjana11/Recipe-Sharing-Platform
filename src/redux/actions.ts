@@ -2,6 +2,10 @@ export const addFavorite = (recipe: any) => ({
     type: 'ADD_FAVORITE',
     payload: recipe
 });
+export const removeFavorite = (recipeId) => ({
+    type: 'REMOVE_FAVORITE',
+    payload: recipeId,
+});
 
 export const setUser = (user: string) => ({
     type: 'SET_USER',
