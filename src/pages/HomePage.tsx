@@ -1,19 +1,29 @@
-import {  useState } from "react";
+import {useEffect, useState} from "react";
 import { useSelector } from 'react-redux';
 import SearchBar from "../components/SearchBar";
 import RecipeCard from "../components/RecipieCard.tsx";
+import {useNavigate} from "react-router-dom";
 
 
 const HomePage = () => {
     const recipes = useSelector((state: any) => state.recipes);
     const [searchQuery, setSearchQuery] = useState<string>("");
 
+    const navigate=useNavigate();
+
+    useEffect(() => {
+        const storedUser=localStorage.getItem("user");
+        if(!storedUser){
+            navigate("/login");
+        }
+    },[navigate])
+
     // Filter the recipe
     const filteredRecipes = recipes.filter((recipe) =>
         recipe.title.toLowerCase().includes(searchQuery.toLowerCase())
     );
 
-    // Handle search logic
+
     const handleSearch = () => {
         console.log(`Searching for: ${searchQuery}`);
     };
